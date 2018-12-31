@@ -24,9 +24,9 @@ extern int do_klog(const char *user, const char *password,
 		   const char *lifetime, const char *cell_name);
 extern afs_int32 getPAG(void);
 
-#define KLOG "/usr/afsws/bin/klog"
-#define KLOGKRB "/usr/afsws/bin/klog.krb"
-#define UNLOG "/usr/afsws/bin/unlog"
+#define KLOG BINDIR "/klog"
+#define KLOGKRB BINDIR "/klog.krb"
+#define UNLOG BINDIR "/unlog"
 #define IGNORE_MAX 1000
 
 #if	defined(AFS_HPUX_ENV)

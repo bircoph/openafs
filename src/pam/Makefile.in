@@ -31,7 +31,7 @@ LT_libs = \
 
 INSTALL_KAUTH = @INSTALL_KAUTH@
 
-MODULE_CFLAGS=${PAM_CFLAGS}
+MODULE_CFLAGS=${PAM_CFLAGS} -DBINDIR='"${bindir}"'
 
 all: test_pam pam_afs.la pam_afs.krb.la
 
