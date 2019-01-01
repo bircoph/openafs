@@ -604,6 +604,12 @@ if test "x$enable_optimize_kernel" = "x" ; then
     [enable_optimize_kernel=yes])
 fi
 
+case $AFS_SYSNAME in
+	*linux*)
+		MT_LIBS="${MT_LIBS} -lresolv"
+		;;
+esac
+
 #
 # Special build targets
 #
