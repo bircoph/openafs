@@ -37,6 +37,10 @@
 
 #include "osi_compat.h"
 
+#if defined(CONFIG_VSERVER)
+#include <linux/vs_cvirt.h>
+#endif /* CONFIG_VSERVER */
+
 /* rxk_NewSocket
  * open and bind RX socket
  */
