@@ -67,9 +67,9 @@ AC_DEFUN([LINUX_EXPORTS_SYS_CALL_TABLE], [
   AC_CHECK_LINUX_BUILD([for exported sys_call_table],
 		       [ac_cv_linux_exports_sys_call_table],
 		       [#include <linux/modversions.h>],
-[#ifndef __ver_sys_call_table
-#error sys_call_table not exported
-#endif],
+[
+extern SYSCALLTYPE sys_call_table[] __attribute__((weak));
+],
 		       [EXPORTED_SYS_CALL_TABLE],
 		       [define if your linux kernel exports sys_call_table],
 		       [])

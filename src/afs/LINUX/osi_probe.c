@@ -231,7 +231,9 @@ extern int kallsyms_address_to_symbol(unsigned long address,
 				     ) __attribute__((weak));
 #endif
 
+#ifdef LINUX_EXPORTS_SYS_CALL_TABLE
 extern SYSCALLTYPE sys_call_table[] __attribute__((weak));
+#endif
 extern SYSCALLTYPE ia32_sys_call_table[] __attribute__((weak));
 extern SYSCALLTYPE sys_call_table32[] __attribute__((weak));
 extern SYSCALLTYPE sys_call_table_emu[] __attribute__((weak));
@@ -502,7 +504,11 @@ static probectl main_probe = {
     0,
 #endif
 
+#ifdef LINUX_EXPORTS_SYS_CALL_TABLE
     sys_call_table,               /* weak symbol ref */
+#else
+    0,
+#endif
     0, 0,                         /* module parameter answers */
 #ifdef AFS_LINUX_sys_call_table
     AFS_LINUX_sys_call_table,     /* compiled-in answer, if any */
