@@ -31,7 +31,7 @@
 #include <sys/file.h>
 #include <sys/wait.h>
 
-#if defined(AFS_LINUX20_ENV)
+#ifdef HAVE_SYS_RESOURCE_H
 #include <sys/resource.h>
 #endif
 
