@@ -223,7 +223,7 @@ else
                         AFS_SYSNAME="ia64_linuxXX"
                         ;;
                 powerpc-*-linux*)
-                        AFS_SYSNAME="`/bin/arch`_linuxXX"
+                        AFS_SYSNAME="`uname -m`_linuxXX"
                         ;;
                 powerpc64-*-linux*)
                         AFS_SYSNAME="ppc64_linuxXX"
@@ -238,7 +238,7 @@ else
                         AFS_SYSNAME="s390x_linuxXX"
                         ;;
                 sparc-*-linux*)
-                        AFS_SYSNAME="`/bin/arch`_linuxXX"
+                        AFS_SYSNAME="`uname -m`_linuxXX"
                         ;;
                 sparc64-*-linux*)
                         AFS_SYSNAME="sparc64_linuxXX"
