@@ -30,6 +30,7 @@ XSLTPROC = @XSLTPROC@
 DOCBOOK2PDF = @DOCBOOK2PDF@
 DBTOEPUB = $(DOCBOOK_STYLESHEETS)/epub/bin/dbtoepub
 KINDLEGEN = @KINDLEGEN@
+TEXOPTS = save_size=50000 max_strings=1000000 pool_size=2000000 hash_extra=100000
 
 index.html: $(SRCS)
 	$(XSLTPROC) --param navig.graphics 1 \
@@ -40,8 +41,10 @@ $(BOOK).pdf: $(SRCS)
 	if test "x$(DOCBOOK2PDF)" = "xfop"; then \
 		$(XSLTPROC) $(DOCBOOK_STYLESHEETS)/fo/docbook.xsl $(BOOK).xml > $(BOOK).fo; \
 		$(DOCBOOK2PDF) $(BOOK).fo $(BOOK).pdf; \
+	elif test "x$(DOCBOOK2PDF)" = "xdocbook2pdf"; then \
+		$(TEXOPTS) $(DOCBOOK2PDF) -e no-idref $(BOOK).xml; \
 	else \
-		$(DOCBOOK2PDF) $(BOOK).xml; \
+		$(TEXOPTS) $(DOCBOOK2PDF) $(BOOK).xml; \
 	fi
 
 $(BOOK).epub: $(SRCS)
