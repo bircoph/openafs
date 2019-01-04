@@ -220,9 +220,9 @@ AC_ARG_WITH([html-xsl],
 
 AC_ARG_WITH([docbook2pdf],
         AS_HELP_STRING([--with-docbook2pdf=ARG],
-        [which Docbook to PDF utility to use (possible choices are: docbook2pdf, dblatex, fop)]),
+        [which Docbook to PDF utility to use (possible choices are: fop, dblatex, docbook2pdf)]),
         [DOCBOOK2PDF="$withval"],
-        [AC_CHECK_PROGS([DOCBOOK2PDF], [docbook2pdf dblatex fop], [echo])])
+        [AC_CHECK_PROGS([DOCBOOK2PDF], [fop dblatex docbook2pdf], [echo])])
 
 AC_ARG_WITH([docbook-stylesheets],
         AS_HELP_STRING([--with-docbook-stylesheets=ARG],
