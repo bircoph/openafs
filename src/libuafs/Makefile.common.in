@@ -142,7 +142,7 @@ RX	=../rx
 AFSINT=../afsint
 LIB	=../lib
 SWIG_PERL_CFLAGS = -fPIC `perl -MExtUtils::Embed -e ccopts`
-SWIG_PERL_LDFLAGS = -fPIC `perl -MExtUtils::Embed -e ldopts`
+SWIG_PERL_LDFLAGS = -fPIC `perl -MExtUtils::Embed -e ldopts | sed "s/-lnsl //g"`
 SWIG = @SWIG@
 LIBUAFS_BUILD_PERL = @LIBUAFS_BUILD_PERL@
 
