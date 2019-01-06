@@ -205,7 +205,8 @@ AC_DEFUN([RRA_LIB_GSSAPI],
     [AS_IF([test x"$withval" != xyes && test x"$withval" != xno],
         [rra_gssapi_libdir="$withval"])])
 
- AS_IF([test x"$rra_reduced_depends" = xtrue],
+AS_IF([test x"$with_gssapi" != xno],
+ [AS_IF([test x"$rra_reduced_depends" = xtrue],
     [_RRA_LIB_GSSAPI_PATHS
      _RRA_LIB_GSSAPI_REDUCED],
     [AS_IF([test x"$rra_gssapi_includedir" = x \
@@ -216,4 +217,4 @@ AC_DEFUN([RRA_LIB_GSSAPI],
 
  RRA_LIB_GSSAPI_SWITCH
  _RRA_LIB_GSSAPI_EXTRA
- RRA_LIB_GSSAPI_RESTORE])
+ RRA_LIB_GSSAPI_RESTORE])])
