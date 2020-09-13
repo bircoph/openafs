@@ -53,7 +53,7 @@ extern int forcemultiple;
 /* XBSA Global Parameters */
 extern afs_int32 xbsaType;
 #ifdef xbsa
-struct butx_transactionInfo butxInfo;
+extern struct butx_transactionInfo butxInfo;
 #endif
 
 static struct TapeBlock {		/* A 16KB tapeblock */
